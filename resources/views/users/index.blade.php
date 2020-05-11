@@ -14,9 +14,9 @@
                 <tr class="info">
                     <th>Ime korisnika</th>
                     <th>Email</th>                    
-                    <th>Admin</th>
-                    <th>Serviser</th>
-                    <th>Neaktivan</th>
+                    <th class="text-center">Admin</th>
+                    <th class="text-center">Serviser</th>
+                    <th class="text-center">Neaktivan</th>
                     <th></th>
                     <th></th>
                 </tr>
@@ -28,6 +28,28 @@
                     <td>{{$user->name}}</td>
                     <td>{{$user->email}}</td>
 
+                    <td>
+                        @if($user->hasRole('administrator'))                    
+                            <div class="text-center">&#x2714</div>
+                        @endif
+                    </td>
+
+                    <td>
+                        @if($user->hasRole('serviser'))                    
+                            <div class="text-center">&#x2714</div>
+                        @endif
+                    </td>
+
+                    <td>
+                        @if($user->hasRole('neaktivan'))                    
+                            <div class="text-center">&#x2714</div>
+                        @endif
+                    </td>
+
+
+                    {{-- CHECKBOX VERZIJA --}}
+
+                    {{-- 
                     <td style="width:50px">                     
                         <div class="custom-control custom-checkbox">
                             <input type="checkbox" class="custom-control-input" name="role_administrator" id="role" {{ $user->hasRole('administrator') ? 'checked':''}}>
@@ -47,7 +69,7 @@
                             <input type="checkbox" class="custom-control-input" name="role_neaktivan" id="role" {{ $user->hasRole('neaktivan') ? 'checked':''}}>
                             <label class="custom-control-label" for="role"></label>
                         </div>
-                    </td>
+                    </td> --}}
    
                     
                     {{-- EDIT --}}      
