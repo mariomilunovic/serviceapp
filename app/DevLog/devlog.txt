@@ -1,0 +1,27 @@
+composer require laravel/ui; php artisan ui bootstrap --auth
+================================
+npm install && npm run dev
+================================
+composer require laravelcollective/html
+================================
+composer require livewire/livewire
+================================
+...
+    @livewireStyles
+</head>
+<body>
+    ...
+
+    @livewireScripts
+</body>
+</html>
+================================
+php artisan db:seed
+================================
+alias alias_name="command_to_run"
+
+==========================
+git init
+git status
+git add .
+
