@@ -17,9 +17,9 @@
     <ul class="navbar-nav mr-auto">
 
          {{-- KLIJENTI --}}
-      <li class="nav-item dropdown">
+      <li class="nav-item dropdown btn btn-outline-primary">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Klijenti
+          <strong>Klijenti</strong> 
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="/clients">Lista</a>
@@ -30,9 +30,9 @@
 
         
          {{-- UREDJAJI --}}
-         <li class="nav-item dropdown">
+         <li class="nav-item dropdown btn btn-outline-primary">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Uređaji
+            <strong>Uređaji</strong> 
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="#">Pretraga</a>
@@ -43,9 +43,9 @@
 
         
          {{-- RADNI NALOZI --}}
-      <li class="nav-item dropdown">
+      <li class="nav-item dropdown btn btn-outline-primary">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Radni nalozi
+          <strong>Radni nalozi</strong> 
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="#">Pretraga</a>
@@ -55,9 +55,9 @@
       </li>
 
          {{-- BLAGAJNA --}}
-         <li class="nav-item dropdown">
+         <li class="nav-item dropdown btn btn-outline-primary">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Blagajna
+            <strong>Blagajna</strong>
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="#">Naplata</a>
@@ -67,21 +67,23 @@
 
 
         {{-- MAGACIN --}}
-        <li class="nav-item dropdown">
+        @if(Auth::user()->hasRole('administrator'))
+        <li class="nav-item dropdown btn btn-outline-warning">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Magacin
+            <strong>Magacin</strong>
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="#">Pretraga artikala</a>
             <a class="dropdown-item" href="#">Unos artikla</a>                    
           </div>
         </li>
+        @endif
 
          {{-- ADMINISTRACIJA --}}
          @if(Auth::user()->hasRole('administrator'))
-         <li class="nav-item dropdown">
+         <li class="nav-item dropdown btn btn-outline-warning">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Administracija
+            <strong>Administracija</strong>
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="/users">Lista korisnika</a>
@@ -92,8 +94,8 @@
         @endif
 
         @if(Auth::user()->hasRole('administrator'))
-      <li class="nav-item">
-        <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Izveštaji</a>
+      <li class="nav-item  btn btn-outline-warning">
+        <a class="nav-link" href="#" tabindex="-1" aria-disabled="true"><strong>Izveštaji</strong></a>
       </li>
       @endif
     </ul>

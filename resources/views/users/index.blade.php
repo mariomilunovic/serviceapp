@@ -11,6 +11,7 @@
     <div class="row">
         <div class="col-md-10">
             <table class="table table-bordered table-striped table-hover">
+                <thead class="thead-dark">
                 <tr class="info">
                     <th>Ime korisnika</th>
                     <th>Email</th>                    
@@ -20,6 +21,7 @@
                     <th></th>
                     <th></th>
                 </tr>
+            </thead>
                 
                 @foreach ($users as $user)
                 
