@@ -1,9 +1,11 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
 
   <i class="fas fa-tools"></i>
-  <a class="navbar-brand" href="#">
+  <a class="navbar-brand" href="/home">
     <img src="/images/ui/servicesapp-icon.png" alt="ServiceApp Logo" style="height:32px; display:inline" />
-    {{config('app.name','ServiceAPP')}}
+    <strong>{{config('app.name','ServiceAPP')}}</strong>
+    {{-- <a href="/home"><h5>{{config('app.name','ServiceAPP')}}</h5></a> --}}
+    
   </a>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -17,7 +19,7 @@
     <ul class="navbar-nav mr-auto">
 
          {{-- KLIJENTI --}}
-      <li class="my-btn-blue nav-item dropdown btn btn-primary">
+      <li class="my-btn-blue nav-item dropdown btn btn-primary {{Request::is('clients*') ? 'my-btn-blue-active':''}}">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <strong>Klijenti</strong> 
         </a>
@@ -81,7 +83,7 @@
 
          {{-- ADMINISTRACIJA --}}
          @if(Auth::user()->hasRole('administrator'))
-         <li class="my-btn-orange  nav-item dropdown btn btn-outline-warning">
+         <li class="my-btn-orange nav-item dropdown btn btn-primary {{Request::is('users*') ? 'my-btn-orange-active':''}}">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <strong>Administracija</strong>
           </a>

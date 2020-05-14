@@ -32,3 +32,6 @@ Carbon::now()->diffForHumans(); vraća razliku u vremenu "post created 2 min ago
 
 =================================
 
+alias tink="php artisan tinker"
+
+

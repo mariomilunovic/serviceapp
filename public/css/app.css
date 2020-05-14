@@ -10889,8 +10889,16 @@ a.text-dark:focus {
   padding: 0px 15px;
 }
 
+/*! Navbar buttons effect*/
+
 .my-btn-blue {
   background-color: #0000;
+  border: none;
+  transition: 0.3s;
+}
+
+.my-btn-blue-active {
+  background-color: #3490DC;
   border: none;
   transition: 0.3s;
 }
@@ -10906,10 +10914,20 @@ a.text-dark:focus {
   transition: 0.3s;
 }
 
+.my-btn-orange-active {
+  background-color: #FD6400;
+  border: none;
+  transition: 0.3s;
+}
+
 .my-btn-orange:hover {
   background-color: #FD6400;
   color: white;
 }
+
+/*! End of Navbar buttons effect*/
+
+/*! Custom loading spinner */
 
 .cssload-container {
   width: 25%;
@@ -10946,4 +10964,6 @@ a.text-dark:focus {
     transform: rotate(360deg);
   }
 }
+
+/*! End of Custom loading spinner */
 

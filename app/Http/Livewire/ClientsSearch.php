@@ -13,14 +13,17 @@ class ClientsSearch extends Component
     public $message = "";
     public $messageClass = "";
     
-    public function mount() // podesava inicijalne parametre za view
+    public function mount() // mount se pokreće čim se komponenta učita
     {        
          $this->clients = null;
+         
     }
     
-    //naziv funkcije je uskladjen sa nazivom bindovane promenljive $query
-    public function updatedQuery()
+    
+    public function updated($query)
     {
+         $this->validate(['query'=>'max:6']);
+
         if(!($this->query))
         {         
             $this->messageClass = "alert alert-danger";

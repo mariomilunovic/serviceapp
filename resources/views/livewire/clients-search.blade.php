@@ -12,16 +12,24 @@
             wire.keydown="search" 
             />
         </div>
+        {{-- bootstrap spinner --}}
+        {{-- <div wire:loading class="spinner-border" role="status">
+            <span class="sr-only"></span>
+          </div> --}}
        
+          {{-- custom spinner --}}
         <div wire:loading class="cssload-container col-sm-1">
             <div class="cssload-speeding-wheel"></div>
         </div>
+
+        @error('query') <span>{{$message}}</span>
+        @enderror
  
         {{-- <button wire:click="search" class="btn btn-primary">Pretraga</button> --}}
     </div>
     
  
-   
+ 
     
     @if($message)
     <span class="{{$messageClass}}">{{$message}}</span>    

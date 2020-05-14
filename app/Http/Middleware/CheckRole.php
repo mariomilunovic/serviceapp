@@ -31,7 +31,8 @@ class CheckRole
             return $next($request);
         }
 
-        return redirect()->back()->with('error','Zabranjen pristup');
+        //abort(401,'Nemate dozvolu za pristup'); može i ova varijanta
+       return redirect()->back()->with('error','Zabranjen pristup');
         //  return response('Zabranjen pristup',401);    }
 }
 }
