@@ -25,3 +25,10 @@ git init
 git status
 git add .
 
+=============================
+
+Carbon::now()->diffForHumans(); vraća razliku u vremenu "post created 2 min ago"
+
+
+=================================
+

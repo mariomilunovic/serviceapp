@@ -25,6 +25,9 @@ Auth::routes(['verify'=>true]);
 Route::get('/home', 'HomeController@index')->name('home');
 
 //my routes
+Route::get('/clients/search', function () {
+    return view('clients.search');
+});
 
 
     
@@ -37,6 +40,8 @@ Route::get('/home', 'HomeController@index')->name('home');
         function()
         {
             Route::resource('clients', 'ClientController');
+
+           
         }
     );
 

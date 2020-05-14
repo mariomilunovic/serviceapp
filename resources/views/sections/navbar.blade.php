@@ -17,7 +17,7 @@
     <ul class="navbar-nav mr-auto">
 
          {{-- KLIJENTI --}}
-      <li class="nav-item dropdown btn btn-outline-primary">
+      <li class="my-btn-blue nav-item dropdown btn btn-primary">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <strong>Klijenti</strong> 
         </a>
@@ -30,7 +30,7 @@
 
         
          {{-- UREDJAJI --}}
-         <li class="nav-item dropdown btn btn-outline-primary">
+         <li class="my-btn-blue nav-item dropdown btn btn-primary">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <strong>Uređaji</strong> 
           </a>
@@ -43,7 +43,7 @@
 
         
          {{-- RADNI NALOZI --}}
-      <li class="nav-item dropdown btn btn-outline-primary">
+      <li class="my-btn-blue nav-item dropdown btn btn-outline-primary">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <strong>Radni nalozi</strong> 
         </a>
@@ -55,7 +55,7 @@
       </li>
 
          {{-- BLAGAJNA --}}
-         <li class="nav-item dropdown btn btn-outline-primary">
+         <li class="my-btn-blue nav-item dropdown btn btn-outline-primary">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <strong>Blagajna</strong>
           </a>
@@ -68,7 +68,7 @@
 
         {{-- MAGACIN --}}
         @if(Auth::user()->hasRole('administrator'))
-        <li class="nav-item dropdown btn btn-outline-warning">
+        <li class="my-btn-orange nav-item dropdown btn btn-outline-warning">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <strong>Magacin</strong>
           </a>
@@ -81,7 +81,7 @@
 
          {{-- ADMINISTRACIJA --}}
          @if(Auth::user()->hasRole('administrator'))
-         <li class="nav-item dropdown btn btn-outline-warning">
+         <li class="my-btn-orange  nav-item dropdown btn btn-outline-warning">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <strong>Administracija</strong>
           </a>
@@ -94,7 +94,7 @@
         @endif
 
         @if(Auth::user()->hasRole('administrator'))
-      <li class="nav-item  btn btn-outline-warning">
+      <li class="my-btn-orange nav-item  btn btn-outline-warning">
         <a class="nav-link" href="#" tabindex="-1" aria-disabled="true"><strong>Izveštaji</strong></a>
       </li>
       @endif
