@@ -49,7 +49,7 @@
                 
                 <tr>
                     
-                    <td>{{$device->make}}</td>
+                    <td>{{$device->brand}}</td>
                     <td>{{$device->model}}</td>
                     <td>{{$device->serial}}</td>                        
                     <td>{{$device->description}}</td>

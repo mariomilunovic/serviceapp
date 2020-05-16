@@ -1,9 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Device;
 
-class DeviceSeeder extends Seeder
+class PartSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,8 +11,6 @@ class DeviceSeeder extends Seeder
      */
     public function run()
     {
-       //Device::truncate();
-
-       // factory(App\Device::class, 30)->create();
+        //
     }
 }

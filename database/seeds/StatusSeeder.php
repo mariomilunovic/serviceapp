@@ -12,7 +12,7 @@ class StatusSeeder extends Seeder
      */
     public function run()
     {
-        Status::truncate(); //brise sve stare podatke iz tabele
+        //Status::truncate(); //brise sve stare podatke iz tabele
 
         Status::create(['name'=>'čeka servis']);
         Status::create(['name'=>'servis u toku']);

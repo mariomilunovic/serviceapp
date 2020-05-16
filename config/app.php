@@ -175,7 +175,9 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        App\Providers\FakerServiceProvider::class,
+
+        //added by me
+        App\Providers\FakerServiceProvider::class, //dodato za mbezhanov faker
 
     ],
 

@@ -13,8 +13,8 @@
             @csrf
             
             <div class="form-group">
-                {{Form::label('make','Marka')}}
-                {{Form::text('make','',['class' => 'form-control','placeholder'=>'Unesi marku uređaja'])}}        
+                {{Form::label('brand','Marka')}}
+                {{Form::text('brand','',['class' => 'form-control','placeholder'=>'Unesi marku uređaja'])}}        
             </div>
             
             <div class="form-group">

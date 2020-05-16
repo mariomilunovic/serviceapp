@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
         $this->call( UserSeeder::class);
         $this->call( StatusSeeder::class);
         $this->call( DeviceSeeder::class);
+        $this->call( OrderSeeder::class);
 
         //Model::guard();// enable the mass assignment protection of the model
     }

@@ -12,7 +12,7 @@ $faker = \Faker\Factory::create();
 
 $factory->define(Device::class, function (Faker $faker) {
     return [
-        'make' => $faker->deviceManufacturer,
+        'brand' => $faker->deviceManufacturer,
         'model' => $faker->starCluster,
         'serial' => $faker->isbn13,
         'description' => $faker->sentence($nbWords = 8, $variableNbWords = true) 

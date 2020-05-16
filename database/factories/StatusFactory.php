@@ -7,6 +7,6 @@ use Faker\Generator as Faker;
 
 $factory->define(Status::class, function (Faker $faker) {
     return [
-        //
+        'name'=>$faker->randomElement($array = array('čeka servis','servis u toku','čeka izdavanje','izdat'))
     ];
 });

@@ -12,7 +12,7 @@ class RoleSeeder extends Seeder
      */
     public function run()
     {
-        Role::truncate(); //brise sve stare podatke iz tabele
+        //Role::truncate(); //brise sve stare podatke iz tabele
 
         Role::create(['name'=>'serviser']);
         Role::create(['name'=>'administrator']);

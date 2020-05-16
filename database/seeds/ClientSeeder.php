@@ -13,7 +13,7 @@ class ClientSeeder extends Seeder
      */
     public function run()
     {
-        Client::truncate();
+        //Client::truncate();
 
         //MANUAL SEED
 
@@ -31,7 +31,7 @@ class ClientSeeder extends Seeder
         
         // FACTORY+FAKER SEED
 
-        factory(App\Client::class, 20)->create();
+       // factory(App\Client::class, 20)->create();
 
          
     }
