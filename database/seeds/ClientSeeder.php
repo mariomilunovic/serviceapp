@@ -29,7 +29,7 @@ class ClientSeeder extends Seeder
 
 
         
-        // FACTORY+FAKER SEED
+        // FACTORY+FAKER SEED --ISKLJUČENO JER ORDERSEEDER GENERIŠE KLIJENTE
 
        // factory(App\Client::class, 20)->create();
 

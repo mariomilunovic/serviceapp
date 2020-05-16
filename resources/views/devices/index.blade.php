@@ -10,7 +10,7 @@
     
     <div class="row">
         <div class="col-md">
-            <table class="table table-bordered table-striped table-hover">
+            <table class="table table-bordered table-sm table-striped table-hover">
                 <thead class="thead-dark">
                     <tr>
                         <th>Marka</th>
@@ -28,7 +28,7 @@
                 
                 <tr>
                     
-                    <td>{{$device->make}}</td>
+                    <td>{{$device->brand}}</td>
                     <td>{{$device->model}}</td>
                     <td>{{$device->serial}}</td>
                     <td>{{$device->description}}</td>                        

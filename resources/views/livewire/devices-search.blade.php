@@ -31,7 +31,7 @@
     <div class="row">
         <div class="col-md">
             @if(!empty($devices))
-            <table class="table table-bordered table-striped table-hover">
+            <table class="table table-bordered table-sm table-striped table-hover">
                 <thead class="thead-dark">
                     <tr>
                         <th>Marka</th>

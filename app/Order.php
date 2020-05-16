@@ -21,4 +21,6 @@ class Order extends Model
     public function device(){
         return $this->belongsTo(Device::class); 
     }
+
+    
 }

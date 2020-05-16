@@ -46,18 +46,18 @@
 
         
          {{-- RADNI NALOZI --}}
-      <li class="my-btn-blue nav-item dropdown btn btn-outline-primary">
+      <li class="my-btn-blue nav-item dropdown btn btn-outline-primary  {{Request::is('orders*') ? 'my-btn-blue-active':''}}">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <strong>Radni nalozi</strong> 
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Pretraga</a>
-          <a class="dropdown-item" href="#">Unos</a>         
-          <a class="dropdown-item" href="#">Obrada</a>            
+          <a class="dropdown-item" href="{{route('orders.index')}}">Lista</a>
+          <a class="dropdown-item" href="{{route('orders.search')}}">Pretraga</a>         
+          <a class="dropdown-item" href="{{route('orders.create')}}">Unos</a>            
+          {{-- <a class="dropdown-item" href="{{route('orders.edit')}}">Izmena</a>   --}}
         </div>
       </li>
-
-         {{-- BLAGAJNA --}}
+        {{-- BLAGAJNA --}}
          <li class="my-btn-blue nav-item dropdown btn btn-outline-primary">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <strong>Blagajna</strong>

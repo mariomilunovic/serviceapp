@@ -14,6 +14,7 @@ class DeviceSeeder extends Seeder
     {
        //Device::truncate();
 
-       // factory(App\Device::class, 30)->create();
+       // factory(App\Device::class, 30)->create(); --ISKLJUčENO JER ORDERSEEDER GENERIŠE DEVICE
+
     }
 }

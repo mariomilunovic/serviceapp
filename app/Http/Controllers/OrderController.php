@@ -14,7 +14,8 @@ class OrderController extends Controller
      */
     public function index()
     {
-        //
+        $orders = Order::orderBy('updated_at','desc')->paginate(5);
+        return view ('orders.index')->with('orders',$orders);
     }
 
     /**

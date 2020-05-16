@@ -51,6 +51,19 @@ Route::group(
     }
 );
 
+//UPRAVLJANJE RADNIM NALOZIMA
+Route::group(
+    [
+        'middleware'=>'check_roles',              
+        'roles' => ['administrator','serviser']
+    ], 
+    function()
+    {
+        Route::get('/orders/search','OrderController@search')->name('orders.search');
+        Route::resource('orders', 'OrderController');
+    }
+);
+
 //UPRAVLJANJE KORISNICIMA
 Route::group(
     [

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Device extends Model
 {
-    protected $fillable = ['make','model','serial','description'];
+    protected $fillable = ['brand','model','serial','description'];
 
 
     public function orders(){

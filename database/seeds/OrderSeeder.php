@@ -13,7 +13,9 @@ class OrderSeeder extends Seeder
     public function run()
     {
         //Order::truncate();
-
+        $now = now();
+        factory(App\Order::class, 20)->create(['payment_status'=>$now,'status_id'=>'4']);
         factory(App\Order::class, 30)->create();
+        
     }
 }

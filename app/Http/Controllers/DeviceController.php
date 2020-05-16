@@ -17,7 +17,7 @@ class DeviceController extends Controller
     public function validateDevice()
     {
        return  request()->validate([  
-           'make' => 'required',
+           'brand' => 'required',
            'model' => 'required',
            'serial' => 'required',
            'description' => 'required'
@@ -31,7 +31,7 @@ class DeviceController extends Controller
 
     public function index()
     {
-        $devices = Device::orderBy('updated_at','desc')->paginate(5);
+        $devices = Device::orderBy('updated_at','desc')->paginate(8);
         return view ('devices.index')->with('devices',$devices);
     }
 
