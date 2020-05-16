@@ -17,10 +17,16 @@ class ClientController extends Controller
         ]);
      }
 
+    
+     public function search()
+     {
+         return view ('clients.search'); //Livewire
+     }
+
     public function index()
     {
         $clients = Client::orderBy('updated_at','desc')->paginate(5);
-        return view('clients.index')->with('clients',$clients);
+        return view ('clients.index')->with('clients',$clients);
     }
     
     public function create()
@@ -31,7 +37,7 @@ class ClientController extends Controller
     public function store()
     {       
         Client::create($this->validateClient());
-        return redirect ('/clients')->with('success','Klijent je uspešno unet');
+        return redirect(route('clients.index'))->with('success','Klijent je uspešno unet');
     }
 
     public function show(Client $client)
@@ -48,13 +54,13 @@ class ClientController extends Controller
     public function update(Client $client)
     {
          $client->update($this->validateClient());
-         return redirect ('/clients')->with('success','Izmena uspešna');
+         return redirect(route('clients.index'))->with('success','Izmena uspešna');
     }
    
     public function destroy($id)
     {        
         $client = Client::findOrFail($id);
         $client->delete();
-        return redirect ('/clients')->with('success','Klijent je obrisan');
+        return redirect(route('clients.index'))->with('success','Klijent je obrisan');
     }
 }

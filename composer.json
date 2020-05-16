@@ -14,9 +14,10 @@
         "guzzlehttp/guzzle": "^6.3",
         "laravel/framework": "^7.0",
         "laravel/tinker": "^2.0",
-        "laravel/ui": "^2.0", 
-        "laravelcollective/html": "^6.1", 
-        "livewire/livewire": "^1.0" 
+        "laravel/ui": "^2.0",
+        "laravelcollective/html": "^6.1",
+        "livewire/livewire": "^1.0",
+        "mbezhanov/faker-provider-collection": "^1.2"
     },
     "require-dev": {
         "facade/ignition": "^2.0",
@@ -37,16 +38,21 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "app/"
+            "App\\": "app/",
+            "Bezhanov\\Faker\\": "src/Faker"
+             
         },
         "classmap": [
             "database/seeds",
             "database/factories"
+            
         ]
+        
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\": "tests/"
+            "Tests\\": "tests/",
+             "Bezhanov\\Tests\\Faker\\": "tests/Faker" 
         }
     },
     "minimum-stability": "dev",

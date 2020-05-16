@@ -34,4 +34,18 @@ Carbon::now()->diffForHumans(); vraća razliku u vremenu "post created 2 min ago
 
 alias tink="php artisan tinker"
 
+===========================
 
+belongsTo and belongsToMany - you're telling Laravel that this table holds the foreign key that connects it to the other table.
+
+hasOne and hasMany - you're telling Laravel that this table does not have the foreign key.
+===============================================
+
+php artisan clear-compiled 
+composer dump-autoload
+php artisan optimize ; This will clear the current compiled files, update the classes it needs and then write them back out so you don't have to do it again.
+
+ =========================================
+
+  composer require mbezhanov/faker-provider-collection // bolji faker
+  ==========

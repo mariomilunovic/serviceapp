@@ -11,8 +11,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call( RolesTableSeeder::class);
-        $this->call( ClientsTableSeeder::class);
-        $this->call( UsersTableSeeder::class);
+        //Model::unguard();// temporarily disable the mass assignment protection of the model
+
+        $this->call( RoleSeeder::class);
+        $this->call( ClientSeeder::class);
+        $this->call( UserSeeder::class);
+        $this->call( StatusSeeder::class);
+        $this->call( DeviceSeeder::class);
+
+        //Model::guard();// enable the mass assignment protection of the model
     }
 }

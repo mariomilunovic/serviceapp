@@ -17,43 +17,48 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
-// ['verify'=>true] parametar aktivira email confirmation
-Auth::routes(['verify'=>true]);
-
+Auth::routes(['verify'=>true]); // ['verify'=>true] parametar aktivira email confirmation
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-//my routes
-Route::get('/clients/search', function () {
-    return view('clients.search');
-});
+
+//////////////////////////////my routes
 
 
-    
-    //UPRAVLJANJE KLIJENTIMA
-    Route::group(
-        [
-            'middleware'=>'check_roles',              
-            'roles' => ['administrator','serviser']
-        ], 
-        function()
-        {
-            Route::resource('clients', 'ClientController');
+//UPRAVLJANJE KLIJENTIMA
+Route::group(
+    [
+        'middleware'=>'check_roles',              
+        'roles' => ['administrator','serviser']
+    ], 
+    function()
+    {         
+        Route::get('/clients/search','ClientController@search')->name('clients.search');
+        Route::resource('clients', 'ClientController');    
+    }
+);
 
-           
-        }
-    );
+//UPRAVLJANJE UREĐAJIMA
+Route::group(
+    [
+        'middleware'=>'check_roles',              
+        'roles' => ['administrator','serviser']
+    ], 
+    function()
+    {
+        Route::get('/devices/search','DeviceController@search')->name('devices.search');
+        Route::resource('devices', 'DeviceController');
+    }
+);
 
-    //UPRAVLJANJE KORISNICIMA
-    Route::group(
-        [
-            'middleware'=>'check_roles',              
-            'roles' => ['administrator']
-        ], 
-        function()
-        {
-            Route::resource('users', 'UserController');
-        }
-    );
-    
+//UPRAVLJANJE KORISNICIMA
+Route::group(
+    [
+        'middleware'=>'check_roles',              
+        'roles' => ['administrator']
+    ], 
+    function()
+    {
+        Route::resource('users', 'UserController');
+    }
+);

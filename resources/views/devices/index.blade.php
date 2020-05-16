@@ -5,7 +5,7 @@
 <div class="container">
     
     
-    <h2>Prikaz svih klijenata</h2>
+    <h2>Baza uređaja</h2>
     <hr>
     
     <div class="row">
@@ -13,10 +13,10 @@
             <table class="table table-bordered table-striped table-hover">
                 <thead class="thead-dark">
                     <tr>
-                        <th>Ime klijenta</th>
-                        <th>Prezime klijenta</th>
-                        <th>Email</th>
-                        <th>Telefon</th>
+                        <th>Marka</th>
+                        <th>Model</th>
+                        <th>Serijski broj</th>
+                        <th>Opis</th>
                         <th></th>
                         @if(Auth::user()->hasRole('administrator'))
                         <th></th>
@@ -24,23 +24,23 @@
                     </tr>
                 </thead>
                 
-                @foreach ($clients as $client)
+                @foreach ($devices as $device)
                 
                 <tr>
                     
-                    <td>{{$client->firstname}}</td>
-                    <td>{{$client->lastname}}</td>
-                    <td>{{$client->email}}</td>
-                    <td>{{$client->tel}}</td>                        
+                    <td>{{$device->make}}</td>
+                    <td>{{$device->model}}</td>
+                    <td>{{$device->serial}}</td>
+                    <td>{{$device->description}}</td>                        
                     
                     {{-- EDIT --}}      
-                    <td><a href="{{route('clients.edit',$client->id)}}"><button class="alert btn btn-primary btn-block">Izmeni</button></a></td>                      
+                    <td><a href="{{route('devices.edit',$device->id)}}"><button class="alert btn btn-primary btn-block">Izmeni</button></a></td>                      
                         
                     {{-- DELETE --}}     
                     @if(Auth::user()->hasRole('administrator'))
                         
                         <td>        
-                            {!! Form::open(['route' => ['clients.destroy',$client->id],'method'=>'delete']) !!}                        
+                            {!! Form::open(['route' => ['devices.destroy',$device->id],'method'=>'delete']) !!}                        
                             @csrf                       
                             {!! Form::submit('Obriši',['class'=>'alert btn btn-danger btn-block']) !!}      
                             {!! Form::close() !!}   
@@ -53,7 +53,7 @@
                     @endforeach
                     
                 </table>
-                {{$clients->links()}}
+                {{$devices->links()}}
             </div>
            
         </div>

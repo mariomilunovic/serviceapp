@@ -9,7 +9,7 @@
     <hr>
     <div class="row">
         <div class="col-5">
-            {!! Form::open(['url' => '/clients','method'=>'post']) !!}      
+            {!! Form::open(['route' => 'clients.store','method'=>'post']) !!}      
             @csrf
             
             <div class="form-group">

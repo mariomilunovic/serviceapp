@@ -12,9 +12,27 @@ class DeviceController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+
+    public function validateDevice()
+    {
+       return  request()->validate([  
+           'make' => 'required',
+           'model' => 'required',
+           'serial' => 'required',
+           'description' => 'required'
+       ]);
+    }
+
+    public function search()
+    {
+        return view ('devices.search');
+    }
+
     public function index()
     {
-        //
+        $devices = Device::orderBy('updated_at','desc')->paginate(5);
+        return view ('devices.index')->with('devices',$devices);
     }
 
     /**
@@ -24,7 +42,7 @@ class DeviceController extends Controller
      */
     public function create()
     {
-        //
+        return view('devices.create');
     }
 
     /**
@@ -35,7 +53,8 @@ class DeviceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Device::create($this->validateDevice());
+        return redirect(route('devices.index'))->with('success','Uređaj je uspešno unet');
     }
 
     /**
@@ -78,8 +97,10 @@ class DeviceController extends Controller
      * @param  \App\Device  $device
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Device $device)
+    public function destroy($id)
     {
-        //
+        $deviceToBeDeleted = Device::find($id);
+        $deviceToBeDeleted->delete();
+        return redirect(route('devices.index'))->with('success','Uređaj je obrisan');
     }
 }

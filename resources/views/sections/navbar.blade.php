@@ -24,21 +24,22 @@
           <strong>Klijenti</strong> 
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="/clients">Lista</a>
-          <a class="dropdown-item" href="/clients/search">Pretraga</a>
-          <a class="dropdown-item" href="/clients/create">Unos</a>                    
+          <a class="dropdown-item" href="{{route('clients.index')}}">Lista</a>
+          <a class="dropdown-item" href="{{route('clients.search')}}">Pretraga</a>
+          <a class="dropdown-item" href="{{route('clients.create')}}">Unos</a>                    
         </div>
       </li>
 
         
          {{-- UREDJAJI --}}
-         <li class="my-btn-blue nav-item dropdown btn btn-primary">
+         <li class="my-btn-blue nav-item dropdown btn btn-primary {{Request::is('devices*') ? 'my-btn-blue-active':''}}">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <strong>Uređaji</strong> 
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Pretraga</a>
-            <a class="dropdown-item" href="#">Unos</a>                    
+            <a class="dropdown-item" href="{{route('devices.index')}}">Lista</a>
+            <a class="dropdown-item" href="{{route('devices.search')}}">Pretraga</a>
+            <a class="dropdown-item" href="{{route('devices.create')}}">Unos</a>                   
           </div>
         </li>
        

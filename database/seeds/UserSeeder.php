@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Hash;
 use App\User;
 use App\Role;
 
-class UsersTableSeeder extends Seeder
+class UserSeeder extends Seeder
 {
     /**
     * Run the database seeds.
@@ -19,17 +19,20 @@ class UsersTableSeeder extends Seeder
         User::truncate();
         DB::table('role_user')->truncate();
         
-        $role_administror = Role::where('name','administrator')->first();
+        
+        $role_administrator = Role::where('name','administrator')->first();
         $role_serviser = Role::where('name','serviser')->first();
         $role_neaktivan = Role::where('name','neaktivan')->first();
         
+
 
         $userAdministrator = User::create([
             'name'=>'Mario Milunović',
             'email'=>'mario@gmail.com',
             'password'=>Hash::make('administrator')
         ]);
-        $userAdministrator->roles()->attach($role_administror);
+        $userAdministrator->roles()->attach($role_administrator);
+
 
 
 
@@ -42,13 +45,33 @@ class UsersTableSeeder extends Seeder
         
 
 
+
         $userNeaktivan = User::create([
             'name'=>'Marko Marković',
             'email'=>'marko@gmail.com',
             'password'=>Hash::make('neaktivan')
         ]);
         $userNeaktivan->roles()->attach($role_neaktivan);
+
+
+
+
+        $userNeaktivan = User::create([
+            'name'=>'Kosta Kostić',
+            'email'=>'kosta@gmail.com',
+            'password'=>Hash::make('neaktivan')
+        ]);
+        $userNeaktivan->roles()->attach($role_serviser);
+
+
+
             
+        $userNeaktivan = User::create([
+            'name'=>'Selver Pepić',
+            'email'=>'selver@gmail.com',
+            'password'=>Hash::make('administrator')
+        ]);
+        $userNeaktivan->roles()->attach($role_administrator);
     }
 }
     
