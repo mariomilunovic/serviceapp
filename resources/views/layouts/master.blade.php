@@ -21,6 +21,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     
     <!-- Styles -->
+    <script src="https://kit.fontawesome.com/cccf08786c.js" crossorigin="anonymous"></script>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     
     @livewireStyles
@@ -37,7 +38,7 @@
             <br>
             @yield('content')
         </div>
-        
+        <br>
     @include('sections.footer')
     
     @livewireScripts

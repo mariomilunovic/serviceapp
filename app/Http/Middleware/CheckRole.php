@@ -17,6 +17,7 @@ class CheckRole
     */
     public function handle($request, Closure $next)
     {
+       
         if($request->user() === null)
         {
          return redirect()->back()->with('error','Zabranjen pristup');

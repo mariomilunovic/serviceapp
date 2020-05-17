@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
 
-  <i class="fas fa-tools"></i>
+ 
   <a class="navbar-brand" href="/home">
     <img src="/images/ui/servicesapp-icon.png" alt="ServiceApp Logo" style="height:32px; display:inline" />
     <strong>{{config('app.name','ServiceAPP')}}</strong>
@@ -45,16 +45,16 @@
        
 
         
-         {{-- RADNI NALOZI --}}
+         {{-- SERVISNI NALOZI --}}
       <li class="my-btn-blue nav-item dropdown btn btn-outline-primary  {{Request::is('orders*') ? 'my-btn-blue-active':''}}">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <strong>Radni nalozi</strong> 
+          <strong>Servisni nalozi</strong> 
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="{{route('orders.index')}}">Lista</a>
           <a class="dropdown-item" href="{{route('orders.search')}}">Pretraga</a>         
           <a class="dropdown-item" href="{{route('orders.create')}}">Unos</a>            
-          {{-- <a class="dropdown-item" href="{{route('orders.edit')}}">Izmena</a>   --}}
+           
         </div>
       </li>
         {{-- BLAGAJNA --}}
@@ -127,7 +127,7 @@
     @else
         <li class="nav-item dropdown">
             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                {{ Auth::user()->name }} <span class="caret"></span>
+              <i class="far fa-user fa-2x  pr-2"></i><strong style="font-size:20px">{{ Auth::user()->name }} </strong><span class="caret"></span>
             </a>
 
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">

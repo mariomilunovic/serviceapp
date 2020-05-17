@@ -6,7 +6,10 @@ use Illuminate\Http\Request;
 use App\Client;
 
 class ClientController extends Controller
+
 {  
+
+
      public function validateClient()
      {
         return  request()->validate([  
@@ -28,8 +31,8 @@ class ClientController extends Controller
         $clients = Client::orderBy('updated_at','desc')->paginate(8);
         return view ('clients.index')->with('clients',$clients);
     }
-    
-    public function create()
+      
+    public function create(Request $request)
     {
         return view('clients.create');
     }
@@ -60,7 +63,14 @@ class ClientController extends Controller
     public function destroy($id)
     {        
         $client = Client::findOrFail($id);
+        if($client->orders->count()>0)
+        {
+        return redirect(route('clients.index'))->with('error','Klijent ne može biti obrisan jer postoje vezani servisni nalozi');
+        }
+        else
+        {
         $client->delete();
         return redirect(route('clients.index'))->with('success','Klijent je obrisan');
+        }
     }
 }

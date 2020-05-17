@@ -3,82 +3,88 @@
 namespace App\Http\Controllers;
 
 use App\Order;
+use App\Client;
+use App\Device;
+use Auth;
+
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
+
+    public function validateOrder()
+     {
+        return  request()->validate([  
+            'client_id' => 'required',
+            'device_id' => 'required',
+            'problem_description' => 'required',
+            'internal_comment' => 'required'
+        ]);
+     }
+
+     public function status()
+     {
+         return view ('orders.status'); //Livewire
+     }
+
+  
     public function index()
     {
         $orders = Order::orderBy('updated_at','desc')->paginate(5);
         return view ('orders.index')->with('orders',$orders);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
-        //
+        $clients = Client::orderBy('updated_at','desc')->get();
+        $devices = Device::orderBy('updated_at','desc')->get();
+        return view('orders.create')->with(['devices'=>$devices,'clients'=>$clients]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+  
     public function store(Request $request)
     {
-        //
+              
+            $newOrder = $this->validateOrder();
+            $newOrder += [
+                'time_spent'=>'0',
+                'user_id'=>Auth::user()->id,
+                'access_code'=>uniqid(),
+                'status_id'=>'1', //čeka na servis
+                      
+            
+            ];
+            Order::create($newOrder);
+             return redirect(route('orders.index'))->with('success','Nalog je uspešno unet');
+
+            ddd($newOrder);
+        
+
+        // Order::create($this->validateOrder());
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Order  $order
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Order $order)
+   
+    public function show($id)
     {
-        //
+        $order = Order::find($id);
+        return view ('orders.show')->with('order',$order);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Order  $order
-     * @return \Illuminate\Http\Response
-     */
+ 
     public function edit(Order $order)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Order  $order
-     * @return \Illuminate\Http\Response
-     */
+ 
     public function update(Request $request, Order $order)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Order  $order
-     * @return \Illuminate\Http\Response
-     */
+  
     public function destroy(Order $order)
     {
         //

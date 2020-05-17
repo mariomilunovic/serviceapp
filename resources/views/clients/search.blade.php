@@ -8,7 +8,7 @@
     
     
     <h2>Pretraga klijenata</h2>
-    <hr>
+    
     
     <div>
         

@@ -6,7 +6,7 @@
     
     
     <h2>Baza uređaja</h2>
-    <hr>
+
     
     <div class="row">
         <div class="col-md">
@@ -30,7 +30,7 @@
                     
                     <td>{{$device->brand}}</td>
                     <td>{{$device->model}}</td>
-                    <td>{{$device->serial}}</td>
+                    <td><small>S/N: </small> {{$device->serial}}</td>
                     <td>{{$device->description}}</td>                        
                     
                     {{-- EDIT --}}      

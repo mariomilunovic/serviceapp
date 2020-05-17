@@ -22,21 +22,25 @@ Auth::routes(['verify'=>true]); // ['verify'=>true] parametar aktivira email con
 Route::get('/home', 'HomeController@index')->name('home');
 
 
+
+
 //////////////////////////////my routes
 
 
 //UPRAVLJANJE KLIJENTIMA
+
+
 Route::group(
     [
         'middleware'=>'check_roles',              
         'roles' => ['administrator','serviser']
     ], 
     function()
-    {         
+    {       
         Route::get('/clients/search','ClientController@search')->name('clients.search');
-        Route::resource('clients', 'ClientController');    
-    }
-);
+        Route::resource('clients', 'ClientController');        
+    } );
+    
 
 //UPRAVLJANJE UREĐAJIMA
 Route::group(
@@ -52,6 +56,7 @@ Route::group(
 );
 
 //UPRAVLJANJE RADNIM NALOZIMA
+Route::get('/orders/status','OrderController@status')->name('orders.status'); //PROVERA STATUSA SERVISA
 Route::group(
     [
         'middleware'=>'check_roles',              
@@ -59,6 +64,7 @@ Route::group(
     ], 
     function()
     {
+        
         Route::get('/orders/search','OrderController@search')->name('orders.search');
         Route::resource('orders', 'OrderController');
     }

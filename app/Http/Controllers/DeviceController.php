@@ -100,7 +100,16 @@ class DeviceController extends Controller
     public function destroy($id)
     {
         $deviceToBeDeleted = Device::find($id);
-        $deviceToBeDeleted->delete();
-        return redirect(route('devices.index'))->with('success','Uređaj je obrisan');
+
+        if($deviceToBeDeleted->orders->count()>0)
+        {
+            return redirect(route('devices.index'))->with('error','Uređaj ne može biti obrisan jer postoje vezani servisni nalozi');
+        }
+        else
+        {
+            $deviceToBeDeleted->delete();
+            return redirect(route('devices.index'))->with('success','Uređaj je obrisan');
+        }
     }
+        
 }

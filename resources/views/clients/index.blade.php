@@ -6,7 +6,7 @@
     
     
     <h2>Prikaz svih klijenata</h2>
-    <hr>
+   
     
     <div class="row">
         <div class="col-md">
@@ -30,7 +30,7 @@
                     
                     <td>{{$client->firstname}}</td>
                     <td>{{$client->lastname}}</td>
-                    <td>{{$client->email}}</td>
+                    <td><a href="mailto:{{$client->email}}">{{$client->email}}</a></td>
                     <td>{{$client->tel}}</td>                        
                     
                     {{-- EDIT --}}      

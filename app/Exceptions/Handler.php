@@ -50,6 +50,11 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Throwable $exception)
     {
+        /////////////////redirektuje nakon isteka sesije
+        if ($exception instanceof AuthenticationException) {
+            return redirect('/');
+        }
+        //////////////////////////////////////////////
         return parent::render($request, $exception);
     }
 }

@@ -16,6 +16,11 @@ composer require livewire/livewire
 </body>
 </html>
 ================================
+
+ php artisan make:livewire OrdersSearch
+
+==================================
+php artisan migrate:fresh
 php artisan db:seed
 ================================
 alias alias_name="command_to_run"
@@ -24,15 +29,18 @@ alias alias_name="command_to_run"
 git init
 git status
 git add .
+git commit -m "changelog"
+git push
 
 =============================
 
-Carbon::now()->diffForHumans(); vraća razliku u vremenu "post created 2 min ago"
+{{Carbon\Carbon::parse($order->created_at)->diffForHumans()}} //vraća razliku u vremenu "post created 2 min ago"
 
 
 =================================
 
 alias tink="php artisan tinker"
+factory(App\Order::class,20)->create(['status'=>'status'])
 
 ===========================
 

@@ -76,7 +76,8 @@
                             <a href="{{ route('register') }}">Register</a>
                         @endif --}}
                     @endauth
-                    <a href="{{ route('login') }}">Status servisa</a>
+                    <a href="{{ route('orders.status') }}">Status servisa</a>
+                    <a href="{{ route('clients.search') }}">Pretraga</a>
                 </div>
             @endif
 

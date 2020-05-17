@@ -8,7 +8,7 @@
     
     
     <h2>Pretraga uređaja</h2>
-    <hr>
+   
     
     <div>
         

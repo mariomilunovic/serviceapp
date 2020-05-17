@@ -24,6 +24,8 @@ class CreateOrdersTable extends Migration
             $table->text('public_comment')->nullable();
             $table->text('internal_comment')->nullable();
             $table->timestamp('payment_status')->nullable(); 
+            $table->string('access_code'); 
+
             $table->timestamps(); // created_at, updated_at
 
            $table->foreign('user_id')->references('id')->on('users'); //->onDelete('cascade');
