@@ -7,8 +7,8 @@
     <h2>Provera statusa servisa</h2>
     <hr>
     
-    <div>        
-        @livewire('check-status')    
+    <div>   
+       @livewire('check-status')
     </div>
 </div>
 

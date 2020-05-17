@@ -63,9 +63,10 @@ class DeviceController extends Controller
      * @param  \App\Device  $device
      * @return \Illuminate\Http\Response
      */
-    public function show(Device $device)
+    public function show($id)
     {
-        //
+        $device=Device::find($id);
+        return view ('devices.show')->with('device',$device);
     }
 
     /**
@@ -76,7 +77,11 @@ class DeviceController extends Controller
      */
     public function edit(Device $device)
     {
-        //
+        
+         //$device = Device::findOrFail($device->id);
+         //ddd($device);
+         // ako se ime primljene promenljive poklapa sa imenom u ruti onda se ova linija koda obavlja automatski
+         return view('devices.edit')->with('device',$device);
     }
 
     /**
@@ -88,7 +93,8 @@ class DeviceController extends Controller
      */
     public function update(Request $request, Device $device)
     {
-        //
+        $device->update($this->validateDevice());
+        return redirect(route('devices.index'))->with('success','Izmena uspešna');
     }
 
     /**

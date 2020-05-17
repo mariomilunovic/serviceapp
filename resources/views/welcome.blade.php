@@ -77,7 +77,7 @@
                         @endif --}}
                     @endauth
                     <a href="{{ route('orders.status') }}">Status servisa</a>
-                    <a href="{{ route('clients.search') }}">Pretraga</a>
+                   
                 </div>
             @endif
 

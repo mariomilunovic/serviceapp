@@ -37,7 +37,7 @@
             
             <br>
             
-            <a href="/clients" class="btn btn-danger btn-block float-right" role="button">Odustani</a>
+            <a href="/devices" class="btn btn-danger btn-block float-right" role="button">Odustani</a>
 
         </div>
     </div>

@@ -18,9 +18,9 @@
                         <th>Serijski broj</th>
                         <th>Opis</th>
                         <th></th>
-                        @if(Auth::user()->hasRole('administrator'))
+                        {{-- @if(Auth::user()->hasRole('administrator'))
                         <th></th>
-                        @endif
+                        @endif --}}
                     </tr>
                 </thead>
                 
@@ -30,14 +30,18 @@
                     
                     <td>{{$device->brand}}</td>
                     <td>{{$device->model}}</td>
-                    <td><small>S/N: </small> {{$device->serial}}</td>
-                    <td>{{$device->description}}</td>                        
+                    <td><small>S/N: <strong>{{$device->serial}}</strong> </small></td> 
+                    <td>{{$device->description}}</td>     
+                    
+                     {{-- SHOW --}}      
+                     <td><a href="{{route('devices.show',$device->id)}}"><button class="alert btn btn-primary btn-block">Detalji</button></a></td>                      
+                        
                     
                     {{-- EDIT --}}      
-                    <td><a href="{{route('devices.edit',$device->id)}}"><button class="alert btn btn-primary btn-block">Izmeni</button></a></td>                      
+                    {{-- <td><a href="{{route('devices.edit',$device->id)}}"><button class="alert btn btn-primary btn-block">Izmeni</button></a></td>                       --}}
                         
                     {{-- DELETE --}}     
-                    @if(Auth::user()->hasRole('administrator'))
+                    {{-- @if(Auth::user()->hasRole('administrator'))
                         
                         <td>        
                             {!! Form::open(['route' => ['devices.destroy',$device->id],'method'=>'delete']) !!}                        
@@ -46,7 +50,7 @@
                             {!! Form::close() !!}   
                         </td>
                         
-                    @endif
+                    @endif --}}
                         
                     </tr>                    
                     

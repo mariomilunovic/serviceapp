@@ -10,8 +10,7 @@
     <div class="row">
         <div class="col-5">
             
-            {!! Form::open(['route' => ['clients.update',$client->id],'method'=>'put']) !!}
-            
+            {!! Form::open(['route' => ['clients.update',$client->id],'method'=>'put']) !!}            
             @csrf
             
             <div class="form-group">
@@ -39,7 +38,7 @@
             
             <br>  
             
-            <a href="/clients" class="btn btn-danger btn-block float-right" role="button">Odustani</a>
+            <a href="{{route('clients.show',$client->id)}}" class="btn btn-danger btn-block float-right" role="button">Odustani</a>
 
         </div>
     </div>

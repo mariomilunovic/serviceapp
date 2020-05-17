@@ -55,7 +55,7 @@
                     <td>{{$order->time_spent}} radnih sati</td> 
                 </tr>
                 <tr>
-                    <td>Javni komentar</td>
+                    <td>Izveštaj servisera</td>
                     <td>{{$order->public_comment}}</td> 
                 </tr>
                 

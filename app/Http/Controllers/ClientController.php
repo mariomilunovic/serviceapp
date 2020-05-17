@@ -43,9 +43,10 @@ class ClientController extends Controller
         return redirect(route('clients.index'))->with('success','Klijent je uspešno unet');
     }
 
-    public function show(Client $client)
+    public function show($id)
     {
-        //
+        $client=Client::find($id);
+        return view ('clients.show')->with('client',$client);
     }
 
     public function edit(Client $client)
@@ -65,7 +66,7 @@ class ClientController extends Controller
         $client = Client::findOrFail($id);
         if($client->orders->count()>0)
         {
-        return redirect(route('clients.index'))->with('error','Klijent ne može biti obrisan jer postoje vezani servisni nalozi');
+        return redirect(route('clients.show',$id))->with('error','Klijent ne može biti obrisan jer postoje vezani servisni nalozi');
         }
         else
         {

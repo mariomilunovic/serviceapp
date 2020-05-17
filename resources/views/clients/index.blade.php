@@ -18,9 +18,9 @@
                         <th>Email</th>
                         <th>Telefon</th>
                         <th></th>
-                        @if(Auth::user()->hasRole('administrator'))
+                        {{-- @if(Auth::user()->hasRole('administrator'))
                         <th></th>
-                        @endif
+                        @endif --}}
                     </tr>
                 </thead>
                 
@@ -31,13 +31,16 @@
                     <td>{{$client->firstname}}</td>
                     <td>{{$client->lastname}}</td>
                     <td><a href="mailto:{{$client->email}}">{{$client->email}}</a></td>
-                    <td>{{$client->tel}}</td>                        
+                    <td>{{$client->tel}}</td>          
+                    
+                     {{-- SHOW --}}      
+                    <td><a href="{{route('clients.show',$client->id)}}"><button class="alert btn btn-primary btn-block">Detalji</button></a></td>  
                     
                     {{-- EDIT --}}      
-                    <td><a href="{{route('clients.edit',$client->id)}}"><button class="alert btn btn-primary btn-block">Izmeni</button></a></td>                      
+                    {{-- <td><a href="{{route('clients.edit',$client->id)}}"><button class="alert btn btn-primary btn-block">Izmeni</button></a></td>                       --}}
                         
                     {{-- DELETE --}}     
-                    @if(Auth::user()->hasRole('administrator'))
+                    {{-- @if(Auth::user()->hasRole('administrator'))
                         
                         <td>        
                             {!! Form::open(['route' => ['clients.destroy',$client->id],'method'=>'delete']) !!}                        
@@ -46,7 +49,7 @@
                             {!! Form::close() !!}   
                         </td>
                         
-                    @endif
+                    @endif --}}
                         
                     </tr>                    
                     
