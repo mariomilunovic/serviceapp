@@ -19,7 +19,7 @@
                     <th class="text-center">Serviser</th>
                     <th class="text-center">Neaktivan</th>
                     <th></th>
-                    <th></th>
+                   
                 </tr>
             </thead>
                 
@@ -72,22 +72,32 @@
                             <label class="custom-control-label" for="role"></label>
                         </div>
                     </td> --}}
-   
+
+
+
+                     {{-- SHOW --}}      
+                     <td>
+                        <a href="{{route('users.show',$user->id)}}"><button class="alert btn btn-primary btn-block">Detalji</button></a>
+                         {{--  <td><a href="/clients/{{$client->id}}/edit"><button class="alert btn btn-primary">Izmeni</button></a></td>                          
+                                 <td><a href="/clients/{{$client->id}}/destroy"><button class="alert btn btn-danger">Obriši</button></a></td>  --}}
+                     </td>
                     
+
                     {{-- EDIT --}}      
-                    <td>
+                    {{-- <td>
                         <a href="{{route('users.edit',$user->id)}}"><button class="alert btn btn-primary">Izmeni</button></a>
                          {{--  <td><a href="/clients/{{$client->id}}/edit"><button class="alert btn btn-primary">Izmeni</button></a></td>                          
                                  <td><a href="/clients/{{$client->id}}/destroy"><button class="alert btn btn-danger">Obriši</button></a></td>  --}}
-                    </td>
                     
+                    
+
                      {{-- DELETE --}}
-                    <td>        
+                    {{-- <td>        
                         {!! Form::open(['action' => ['UserController@destroy',$user->id],'method'=>'delete']) !!}                        
                         @csrf                       
                         {!! Form::submit('Obriši',['class'=>'alert btn btn-danger btn-block']) !!}      
                         {!! Form::close() !!}   
-                    </td> 
+                    </td>  --}}
                     
                 </tr>                    
                 

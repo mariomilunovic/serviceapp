@@ -10884,9 +10884,9 @@ a.text-dark:focus {
 
 .alert {
   margin-bottom: 1px;
-  height: 30px;
-  line-height: 30px;
-  padding: 0px 15px;
+  height: 25px;
+  line-height: 20px;
+  padding: 0px 10px;
 }
 
 /*! Navbar buttons effect*/

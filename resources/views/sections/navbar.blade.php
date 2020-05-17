@@ -90,8 +90,8 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="/users">Lista korisnika</a>
-            <a class="dropdown-item" href="#">Unos korisnika</a>    
-            <a class="dropdown-item" href="#">Cena radnog sata</a>                  
+            <a class="dropdown-item" href="/users/create">Unos korisnika</a>    
+            <a class="dropdown-item" href="/prices/edit">Cena radnog sata</a>                  
           </div>
         </li>
         @endif

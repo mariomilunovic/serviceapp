@@ -14,7 +14,7 @@ class StatusSeeder extends Seeder
     {
         //Status::truncate(); //brise sve stare podatke iz tabele
 
-        Status::create(['name'=>'čeka servis']);
+        Status::create(['name'=>'čeka na servis']);
         Status::create(['name'=>'servis u toku']);
         Status::create(['name'=>'čeka izdavanje']);
         Status::create(['name'=>'izdat']);

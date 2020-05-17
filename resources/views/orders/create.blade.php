@@ -18,8 +18,8 @@
             
             <div class="form-group">
                 <div class="row">
-                    <div class="col-md-1">
-                        {{Form::label('client_id','Klijent :',['class'=>''])}}   
+                    <div class="col-md-2">
+                        {{Form::label('client_id','Klijent : ',['class'=>'col-form-label'])}}   
                     </div>
                     <div class="col-md-6">
                         <select name="client_id" id="client_id" class="form-control">
@@ -36,8 +36,8 @@
             
             <div class="form-group">
                 <div class="row">
-                    <div class="col-md-1">
-                        {{Form::label('device_id','Uređaj :',['class'=>''])}}   
+                    <div class="col-md-2">
+                        {{Form::label('device_id','Uređaj :',['class'=>'col-form-label'])}}   
                     </div>
                     <div class="col-md-6">
                         <select name="device_id" id="device_id" class="form-control">
@@ -55,9 +55,9 @@
             <div class="form-group">
                 <div class="row">
                     <div class="col-md-2">
-                        {{Form::label('problem_description','Opis kvara :',['class'=>''])}}   
+                        {{Form::label('problem_description','Opis kvara :',['class'=>'col-form-label'])}}   
                     </div>
-                    <div class="col-md-7">
+                    <div class="col-md-6">
                         <textarea class="form-control" rows="2" id="problem_description" name="problem_description" placeholder="Unesi opis kvara"></textarea>
                         
                     </div>
@@ -67,20 +67,20 @@
             <div class="form-group">
                 <div class="row">
                     <div class="col-md-2">                        
-                        {{Form::label('internal_comment','Interni komentar :',['class'=>''])}}  
+                        {{Form::label('internal_comment','Interni komentar :',['class'=>'col-form-label'])}}  
                     </div>
-                    <div class="col-md-7">
+                    <div class="col-md-6">
                         <textarea class="form-control" rows="2" id="internal_comment" name="internal_comment" placeholder="Unesi opis kvara"></textarea>                          
                     </div>                    
                 </div>                 
             </div>      
-            
+            <br>
             <div class="form-group">
                 <div class="row">
                     <div class="col-md-3">
                         {!! Form::submit('Unesi',['class'=>'btn btn-primary btn-block']) !!}  
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-2">
                         
                     </div>
                     <div class="col-md-3">
