@@ -127,7 +127,7 @@
     @else
         <li class="nav-item dropdown">
             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-              <i class="far fa-user fa-2x  pr-2"></i><strong style="font-size:20px">{{ Auth::user()->name }} </strong><span class="caret"></span>
+              <i class="far fa-user fa-1x  pr-2"></i><strong style="font-size:15px">{{ Auth::user()->name }} </strong><span class="caret"></span>
             </a>
 
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">

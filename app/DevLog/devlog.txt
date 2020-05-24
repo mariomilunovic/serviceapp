@@ -1,11 +1,11 @@
 composer require laravel/ui; php artisan ui bootstrap --auth
-================================
+======================================================================================================
 npm install && npm run dev
-================================
+======================================================================================================
 composer require laravelcollective/html
-================================
+======================================================================================================
 composer require livewire/livewire
-================================
+======================================================================================================
 ...
     @livewireStyles
 </head>
@@ -15,45 +15,63 @@ composer require livewire/livewire
     @livewireScripts
 </body>
 </html>
-================================
+======================================================================================================
 
  php artisan make:livewire OrdersSearch
 
-==================================
+======================================================================================================
 php artisan migrate:fresh
 php artisan db:seed
-================================
+======================================================================================================
 alias alias_name="command_to_run"
 
-==========================
+======================================================================================================
 git init
 git status
 git add .
 git commit -m "changelog"
 git push
 
-=============================
+======================================================================================================
 
 {{Carbon\Carbon::parse($order->created_at)->diffForHumans()}} //vraća razliku u vremenu "post created 2 min ago"
 
 
-=================================
+======================================================================================================
 
 alias tink="php artisan tinker"
 factory(App\Order::class,20)->create(['status'=>'status'])
 
-===========================
+======================================================================================================
 
 belongsTo and belongsToMany - you're telling Laravel that this table holds the foreign key that connects it to the other table.
 
 hasOne and hasMany - you're telling Laravel that this table does not have the foreign key.
-===============================================
+======================================================================================================
 
 php artisan clear-compiled 
 composer dump-autoload
 php artisan optimize ; This will clear the current compiled files, update the classes it needs and then write them back out so you don't have to do it again.
 
- =========================================
+======================================================================================================
 
   composer require mbezhanov/faker-provider-collection // bolji faker
-  ==========
+
+======================================================================================================
+
+git-ftp
+
+//install with admin rights
+
+```bash
+curl https://raw.githubusercontent.com/git-ftp/git-ftp/master/git-ftp > /bin/git-ftp
+chmod 755 /bin/git-ftp
+```
+
+//configure
+
+git config git-ftp.url "ftp://ftp.nulajedan.com:21/serviceapp"
+git config git-ftp.user "nulajeda"
+git config git-ftp.password "R7v15p5gJw"
+
+
