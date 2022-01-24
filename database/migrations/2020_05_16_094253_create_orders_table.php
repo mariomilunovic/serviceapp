@@ -20,7 +20,7 @@ class CreateOrdersTable extends Migration
             $table->unsignedBigInteger('device_id');
             $table->unsignedBigInteger('status_id');
             $table->text('problem_description');
-            $table->unsignedDecimal('time_spent')->nullable();        
+            $table->tinyInteger('time_spent')->nullable();        
             $table->text('public_comment')->nullable();
             $table->text('internal_comment')->nullable();
             $table->timestamp('payment_status')->nullable(); 

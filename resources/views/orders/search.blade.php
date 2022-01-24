@@ -7,12 +7,12 @@
 <div class="container">
     
     
-    <h2>Pretraga uređaja</h2>
+    <h2>Pretraga servisnih naloga</h2>
     <hr>
     
     <div>
         
-        @livewire('devices-search')
+        @livewire('orders-search')
         
     </div>
 

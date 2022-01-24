@@ -45,7 +45,7 @@
                     <td>{{Carbon\Carbon::parse($order->updated_at)->diffForHumans()}}</td>  
 
                     {{-- VIEW --}}      
-                    <td><a href="{{route('orders.show',$order->id)}}"><button class="alert btn btn-primary btn-block">Detalji</button></a></td>  
+                    <td><a href="{{route('orders.show',$order->id)}}"><button class="alert btn btn-warning btn-block">Naplati</button></a></td>  
                     
                     {{-- EDIT --}}      
                     {{-- <td><a href="{{route('orders.edit',$order->id)}}"><button class="alert btn btn-primary btn-block">Izmeni</button></a></td>                       --}}

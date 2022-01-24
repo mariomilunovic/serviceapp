@@ -17,7 +17,8 @@
         <div wire:loading class="cssload-container col-sm-1">
             <div class="cssload-speeding-wheel"></div>
         </div>
-        
+
+        {{-- data validation error --}}
         @error('query') <span>{{$message}}</span>
         @enderror
                 
@@ -30,6 +31,7 @@
     
     <div class="row">
         <div class="col-md">
+            
             @if(!empty($devices))
             <table class="table table-bordered table-sm table-striped table-hover">
                 <thead class="thead-dark">

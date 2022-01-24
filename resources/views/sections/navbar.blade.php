@@ -63,7 +63,7 @@
             <strong>Blagajna</strong>
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Naplata</a>
+            <a class="dropdown-item" href="{{route('orders.pay')}}">Naplata</a>
             <a class="dropdown-item" href="#">Stanje</a>                    
           </div>
         </li>

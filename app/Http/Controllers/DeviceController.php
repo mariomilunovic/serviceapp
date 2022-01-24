@@ -10,13 +10,13 @@ class DeviceController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return array
      */
 
 
     public function validateDevice()
     {
-       return  request()->validate([  
+       return  request()->validate([
            'brand' => 'required',
            'model' => 'required',
            'serial' => 'required',
@@ -38,7 +38,7 @@ class DeviceController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function create()
     {
@@ -49,7 +49,7 @@ class DeviceController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function store(Request $request)
     {
@@ -61,7 +61,7 @@ class DeviceController extends Controller
      * Display the specified resource.
      *
      * @param  \App\Device  $device
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function show($id)
     {
@@ -77,7 +77,7 @@ class DeviceController extends Controller
      */
     public function edit(Device $device)
     {
-        
+
          //$device = Device::findOrFail($device->id);
          //ddd($device);
          // ako se ime primljene promenljive poklapa sa imenom u ruti onda se ova linija koda obavlja automatski
@@ -117,5 +117,5 @@ class DeviceController extends Controller
             return redirect(route('devices.index'))->with('success','Uređaj je obrisan');
         }
     }
-        
+
 }

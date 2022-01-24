@@ -66,6 +66,7 @@ Route::group(
     {
         
         Route::get('/orders/search','OrderController@search')->name('orders.search');
+        Route::get('/orders/pay','OrderController@pay')->name('orders.pay');
         Route::resource('orders', 'OrderController');
     }
 );

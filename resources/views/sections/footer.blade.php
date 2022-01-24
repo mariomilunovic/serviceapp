@@ -9,7 +9,7 @@
 <footer class="page-footer font-small bg-dark fixed-bottom">
 
       <!-- Copyright -->
-      <div class="footer text-center py-3">© 2020 Copyright:
+      <div class="footer text-center py-3 text-light">© 2020 Copyright:
         <a href="https://www.nulajedan.com/"> ServiceApp</a>
       </div>
       <!-- Copyright -->

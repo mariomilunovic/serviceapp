@@ -16,11 +16,20 @@
         {{-- <div wire:loading class="spinner-border" role="status">
             <span class="sr-only"></span>
           </div> --}}
+
+          @if($message=="Ne postoji ni jedan klijent sa unetim prezimenom")
+          <div class="col-md-2">
+              <a href="{{route('clients.create')}}"><input type="button" class="btn btn-success btn-block" value="Unesi novog"></a>
+          </div>
+          
+          @endif
        
           {{-- custom spinner --}}
         <div wire:loading class="cssload-container col-sm-1">
             <div class="cssload-speeding-wheel"></div>
         </div>
+
+      
 
         @error('query') <span>{{$message}}</span>
         @enderror
@@ -33,9 +42,10 @@
     
     @if($message)
     <span class="{{$messageClass}}">{{$message}}</span>    
+   
     @endif
     <br><br>
-    
+
     
     
     <div class="row">
@@ -62,22 +72,28 @@
                     <td>{{$client->firstname}}</td>
                     <td>{{$client->lastname}}</td>
                     <td>{{$client->email}}</td>
-                    <td>{{$client->tel}}</td>                        
+                    <td>{{$client->tel}}</td>   
+                    
+                    
+                    {{-- SHOW --}}
+                     <td><a href="{{route('clients.show',$client->id)}}"><button class="alert btn btn-primary btn-block">Detalji</button></a></td> 
                     
                     {{-- EDIT --}}      
-                    <td><a href="{{route('clients.edit',$client->id)}}"><button class="alert btn btn-primary btn-block">Izmeni</button></a></td>                      
+                     {{-- <td><a href="{{route('clients.edit',$client->id)}}"><button class="alert btn btn-primary btn-block">Izmeni</button></a></td>                       --}}
                     
                     {{-- DELETE --}}     
-                    @if(Auth::user()->hasRole('administrator'))
+                      {{-- @if(Auth::user()->hasRole('administrator')) --}}
                     
-                    <td>        
+                      {{-- <td>        
                         {!! Form::open(['action' => ['ClientController@destroy',$client->id],'method'=>'delete']) !!}                        
                         @csrf                       
                         {!! Form::submit('Obriši',['class'=>'alert btn btn-danger btn-block']) !!}      
                         {!! Form::close() !!}   
-                    </td>
+                     </td>
+                                 
+                       
                     
-                    @endif
+                     @endif --}}
                     
                 </tr>                    
                 
